@@ -5,7 +5,6 @@ This section provides a detailed explanation of the Python code used to create a
 ### 1. Imports and Initialization
 
 ```python
-pythonCopy code
 import pygame
 import time
 import random
@@ -23,7 +22,6 @@ pygame.init()
 ### 2. Define Colors and Display Settings
 
 ```python
-pythonCopy code
 # Colors
 white = (255, 255, 255)
 yellow = (255, 255, 102)
@@ -46,12 +44,10 @@ pygame.display.set_caption('Snake Game by ChatGPT')
 ### 3. Game Settings
 
 ```python
-pythonCopy code
 # Game settings
 clock = pygame.time.Clock()
 snake_block = 10
 snake_speed = 15
-
 ```
 
 - **`clock = pygame.time.Clock()`**: Creates a clock object to control the frame rate.
@@ -61,11 +57,9 @@ snake_speed = 15
 ### 4. Fonts
 
 ```python
-pythonCopy code
 # Fonts
 font_style = pygame.font.SysFont("bahnschrift", 25)
 score_font = pygame.font.SysFont("comicsansms", 35)
-
 ```
 
 - **Font Definitions**: Specifies the fonts used for displaying text (e.g., game over messages, score). `SysFont` creates a font object from the system's available fonts.
@@ -73,7 +67,6 @@ score_font = pygame.font.SysFont("comicsansms", 35)
 ### 5. Utility Functions
 
 ```python
-pythonCopy code
 def score_display(score):
     value = score_font.render("Your Score: " + str(score), True, blue)
     dis.blit(value, [0, 0])
@@ -95,7 +88,6 @@ def message(msg, color):
 ### 6. Main Game Loop - `gameLoop()` Function
 
 ```python
-pythonCopy code
 def gameLoop():
     game_over = False
     game_close = False
@@ -123,7 +115,6 @@ def gameLoop():
 ### 7. Game Loop Logic
 
 ```python
-pythonCopy code
     while not game_over:
 
         while game_close:
@@ -148,7 +139,6 @@ pythonCopy code
 ### 8. Event Handling and Movement
 
 ```python
-pythonCopy code
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 game_over = True
@@ -174,7 +164,6 @@ pythonCopy code
 ### 9. Boundary Collision Detection
 
 ```python
-pythonCopy code
         if x1 >= dis_width or x1 < 0 or y1 >= dis_height or y1 < 0:
             game_close = True
 
@@ -185,7 +174,6 @@ pythonCopy code
 ### 10. Updating Snake Position and Redrawing Screen
 
 ```python
-pythonCopy code
         x1 += x1_change
         y1 += y1_change
         dis.fill(white)
@@ -206,7 +194,6 @@ pythonCopy code
 ### 11. Self-Collision Detection
 
 ```python
-pythonCopy code
         for x in snake_list[:-1]:
             if x == snake_head:
                 game_close = True
@@ -218,7 +205,6 @@ pythonCopy code
 ### 12. Check for Eating Food
 
 ```python
-pythonCopy code
         if x1 == foodx and y1 == foody:
             foodx = round(random.randrange(0, dis_width - snake_block) / 10.0) * 10.0
             foody = round(random.randrange(0, dis_height - snake_block) / 10.0) * 10.0
@@ -231,7 +217,6 @@ pythonCopy code
 ### 13. Update Display and Control Speed
 
 ```python
-pythonCopy code
         score_display(length_of_snake - 1)
         draw_snake(snake_block, snake_list)
         pygame.display.update()
@@ -248,9 +233,7 @@ pythonCopy code
 ### 14. Start the Game
 
 ```python
-pythonCopy code
 gameLoop()
-
 ```
 
 - **Start the Game**: Calls the `gameLoop()` function to initiate the game.
