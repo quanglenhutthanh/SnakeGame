@@ -1,5 +1,3 @@
-# Untitled
-
 ## Snake Game Code Explanation
 
 This section provides a detailed explanation of the Python code used to create a Snake game with the Pygame library.
