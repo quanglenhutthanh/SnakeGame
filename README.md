@@ -4,8 +4,6 @@ This project is a simple implementation of the classic Snake game using Python a
 
 ![image](gameplay.gif)
 
-![image](screenshot2.png)
-
 ## Table of Contents
 - [Installation](#installation)
 - [How to Run](#how-to-run)
