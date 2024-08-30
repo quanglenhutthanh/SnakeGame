@@ -2,7 +2,7 @@
 
 This project is a simple implementation of the classic Snake game using Python and the Pygame library. The objective of the game is to control a snake to eat food, which causes it to grow. The game ends when the snake collides with the screen's edge or with itself.
 
-![image](screenshot1.png)
+![image](gameplay.gif)
 
 ![image](screenshot2.png)
 
